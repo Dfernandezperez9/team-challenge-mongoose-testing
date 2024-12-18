@@ -1,6 +1,5 @@
 const EXPRESS = require("express");
 const ROUTER = EXPRESS.Router();
-const IMPORT_POST = require("../models/post.js");
 const MONGOOSE = require("mongoose");
 const { POST, POST_VALIDATION_SCHEMA } = require('../models/post');
 

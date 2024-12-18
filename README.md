@@ -1,47 +1,19 @@
-# CREACIÓN DE BD UTILIZANDO MONGOOSE Y TESTING
 
-Téneis que crear una API en Node.js utilizando Express con mongoose que consistirá en una red social, donde podras crear, ver publicaciones, actulizar y borrarlas.
+Social network-style application, 100% Backend, developed in Express using Mongoose for database creation in MongoDB, returns information directly in JSON format, allows for a complete CRUD (Create, Read, Update, Delete) of posts in the MongoDB database.
 
-La estructura será la siguiente:
-- config
-  - config.js // Código de la conexión a la base de datos.
-- env
-  - .env // Aquí debe ir la MONGO_URI que nos da mongoDB Atlas
-- models
-  - Post.js // Aqui ira el modelo de la publicación con los campos title, body y los timestamps.
-- routes 
-  - posts.js // Aquí estarán todas las rutas
-- index.js // Añadiremos nuestro servidor, conexión a la base de datos y uniremos el resto de la aplicación
+The GET '/' endpoint returns all posts.
 
-## Endpoints de la API
-- POST /create: Endpoint para crear una publicación.
-- GET /: Endpoint para traer todas las publicaciones.
-- GET /id/:_id: Endpoint para buscar publicación por id.
-- GET /title/:title: Endpoint para buscar una publicación por su titulo.
-- PUT /id/:_id: Endpoint para actualizar una publicación.
-- DELETE /id/:_id: Endpoint para eliminar una publicación.
+The GET '/id/:_id' endpoint displays only the post selected by its MongoDB ID.
 
-## Testing
-- Testea el endpoint - POST /create: Endpoint para crear una publicación.
-- Diapositivas de ayuda: https://docs.google.com/presentation/d/19YMjg7-9EGuMAnzIWk9SseAK9HlnfR1h/edit?usp=sharing&ouid=110594338309918268653&rtpof=true&sd=true
+The GET '/title/:title' endpoint displays only the post selected by its title.
 
-## EXTRA
-- GET /postsWithPagination: Endpoint para traer todas las publicaciones de 10 en 10 (paginación). Es decir, si estoy en la pagina 1  me muestra las 10 primeras publicaciones y si estoy en la pagina 2 me muestra las 10 siguientes.
-- Implementa validación a la hora de crear un post para que se rellene todos los campos y si no se hace que no deje crear la publicación.
-- Testea el endpoint GET /: Endpoint para traer todas las publicaciones.
+The PUT '/id/:_id' endpoint allows modifying the values of the post selected by its MongoDB ID.
 
-1. Configuración
-- Lo primero es inicializar nuestro proyecto de node
-- Lo segundo es hacer npm install para instalar las dependencias de package.json
-- Crearemos un servidor http con express en index.js
+The DELETE '/id/:_id' endpoint allows deleting the post selected by its MongoDB ID.
 
-2. Paso a paso 
-- Comenzaremos a manejar los módulos y solo introduciremos lo necesario en cada uno de ellos. No se debe requerir nada que no se vaya a usar.
+The POST '/create' endpoint allows creating a post from scratch by entering the necessary data in the body; if the schema is invalid, the terminal will return an error.
 
-3. POSTMAN
-- Cada endpoint debe ser probado en postman y ver que funcione.
+The GET '/postsWithPagination' endpoint allows customizing the number of posts displayed per page using the '?page=2&limit=1' parameters.
 
 
-# PISTAS:
-- Investiga que es skip y limit: https://mongoosejs.com/docs/api/query.html#Query.prototype.skip()
-- Investiga como implementar validaciones con mongoose: https://mongoosejs.com/docs/validation.html
+To execute the PUT, POST, and DELETE methods, a tool like Postman is required.
