@@ -1,6 +1,8 @@
 
 Social network-style application, 100% Backend, developed in Express using Mongoose for database creation in MongoDB, returns information directly in JSON format, allows for a complete CRUD (Create, Read, Update, Delete) of posts in the MongoDB database.
 
+Includes testing with the dependencies Jest and Supertest.
+
 The GET '/' endpoint returns all posts.
 
 The GET '/id/:_id' endpoint displays only the post selected by its MongoDB ID.
